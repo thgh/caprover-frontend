@@ -64,7 +64,7 @@ export default class ProFeatures extends ApiComponent<
     render() {
         const self = this
 
-        const apiData = self.state.apiData
+        const apiData = { isFeatureFlagEnabled: true, isSubscribed: true }
         if (!apiData || !apiData.isFeatureFlagEnabled) return <></>
 
         return (
