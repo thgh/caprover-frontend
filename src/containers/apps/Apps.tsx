@@ -97,6 +97,14 @@ export default class Apps extends ApiComponent<
                     maxWidth: 1000,
                 }}
             >
+                <CreateNewApp
+                    onCreateNewAppClicked={(
+                        appName: string,
+                        hasPersistency: boolean
+                    ) => {
+                        self.onCreateNewAppClicked(appName, hasPersistency)
+                    }}
+                />
                 {apiData.appDefinitions.length > 0 ? (
                     <AppsTable
                         search={self.props.location.search}
@@ -111,14 +119,6 @@ export default class Apps extends ApiComponent<
                 ) : (
                     <div />
                 )}
-                <CreateNewApp
-                    onCreateNewAppClicked={(
-                        appName: string,
-                        hasPersistency: boolean
-                    ) => {
-                        self.onCreateNewAppClicked(appName, hasPersistency)
-                    }}
-                />
             </div>
         )
     }
